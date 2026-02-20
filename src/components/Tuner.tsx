@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { useMicrophone } from "../hooks/useMicrophone";
 
+
 const Tuner = () => {
-    const { requestMicrophonePermission } = useMicrophone();
+    const { requestMicrophonePermission, status } = useMicrophone();
+
 
     return (<main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         <div className="grid gap-4 sm:gap-6">
             <section className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6">
                 <h2 className="text-base sm:text-lg font-medium">microphone innit</h2>
                 <p className="mt-2 text-sm sm:text-base text-neutral-300 max-w-prose">
-                    request mic permission.
+                    request mic permission. status: {status}
                 </p>
 
                 <div className="mt-4 flex flex-col sm:flex-row gap-3">
